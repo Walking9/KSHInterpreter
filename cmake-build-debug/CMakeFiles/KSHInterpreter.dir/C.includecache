@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/brunon/CLionProjects/KSHInterpreter/main.c
+stdio.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+stdlib.h
+-
+string.h
+-
+wait.h
+-
+fcntl.h
+-
+errno.h
+-
+signal.h
+-
+
