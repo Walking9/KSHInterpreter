@@ -6,6 +6,36 @@
 
 #IncludeRegexTransform: 
 
+/home/brunon/CLionProjects/KSHInterpreter/cd.h
+stdio.h
+-
+memory.h
+-
+printf.h
+-
+unistd.h
+-
+
+/home/brunon/CLionProjects/KSHInterpreter/date.h
+time.h
+-
+stdio.h
+-
+
+/home/brunon/CLionProjects/KSHInterpreter/ifconfig.h
+ifaddrs.h
+-
+stddef.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+stdio.h
+-
+memory.h
+-
+
 /home/brunon/CLionProjects/KSHInterpreter/ls.h
 dirent.h
 -
@@ -33,4 +63,10 @@ string.h
 -
 ls.h
 /home/brunon/CLionProjects/KSHInterpreter/ls.h
+cd.h
+/home/brunon/CLionProjects/KSHInterpreter/cd.h
+ifconfig.h
+/home/brunon/CLionProjects/KSHInterpreter/ifconfig.h
+date.h
+/home/brunon/CLionProjects/KSHInterpreter/date.h
 

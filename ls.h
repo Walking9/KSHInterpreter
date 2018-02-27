@@ -14,24 +14,25 @@
 #include <string.h>
 #include <time.h>
 
-void ksh_ls(char* dirname);
+void ksh_ls();
 void showFile(char* filename);
 void show_file_info(char* filename, struct stat* info_p);
 void mode_to_letters(int mode, char * str);
 char* uid_to_name(uid_t uid);
 char* gid_to_name(gid_t gid);
 
-void ksh_ls(char* dirname) {
+void ksh_ls() {
+    char dirname[] = ".";
     DIR* dir_ptr;
     struct dirent* direntp;
     if((dir_ptr = opendir(dirname)) == NULL) {   //如果不是目录
         fprintf(stderr,"cann't open %s, not adirectory. treat as a file shown below:\n", dirname);
-        //showFile(dirname);
+        //showFile(dirname);     //ls -l
         printf("%s", dirname);
     }
     else {
         while((direntp = readdir(dir_ptr)) != NULL) {  //逐个显示目录里的文件信息
-            //showFile(direntp->d_name);
+            //showFile(direntp->d_name);   //ls -l
             printf("%s  ", direntp->d_name);
         }
         printf("\n");

@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/cd.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/date.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/ifconfig.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
 		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/ls.h">
 			<Option target="KSHInterpreter"/>
 		</Unit>

@@ -2,9 +2,12 @@
 #include <unistd.h>
 #include <string.h>
 #include "ls.h"
+#include "cd.h"
+#include "ifconfig.h"
+#include "date.h"
 
 //----------宏定义----------------//
-#define MAX_SIZE_PATH 255        //最大路径长度
+
 #define MAX_SIZE_COMMAND 255     //最大命令长度
 
 //----------函数申明--------------//
@@ -22,7 +25,11 @@ int main(int argc, char *argv[]) {
         else if(flag == 0)
             printf("command is error!\n");
         else {
-            ksh_ls(".");
+            ksh_ls();
+            if(ksh_cd("cd ..\n") != 0)
+                printf("error!\n");
+            ksh_ifconfig();
+            ksh_date();
         }
     }
 }
