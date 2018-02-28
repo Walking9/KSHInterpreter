@@ -22,22 +22,14 @@ char* uid_to_name(uid_t uid);
 char* gid_to_name(gid_t gid);
 
 void ksh_ls() {
-    char dirname[] = ".";
-    DIR* dir_ptr;
+    DIR* dir_ptr = opendir(".");    //当前目录下
     struct dirent* direntp;
-    if((dir_ptr = opendir(dirname)) == NULL) {   //如果不是目录
-        fprintf(stderr,"cann't open %s, not adirectory. treat as a file shown below:\n", dirname);
-        //showFile(dirname);     //ls -l
-        printf("%s", dirname);
+    while((direntp = readdir(dir_ptr)) != NULL) {  //逐个显示目录里的文件信息
+        showFile(direntp->d_name);   //ls -l
+        //printf("%s  ", direntp->d_name);
     }
-    else {
-        while((direntp = readdir(dir_ptr)) != NULL) {  //逐个显示目录里的文件信息
-            //showFile(direntp->d_name);   //ls -l
-            printf("%s  ", direntp->d_name);
-        }
-        printf("\n");
-        closedir(dir_ptr);
-    }
+    printf("\n");
+    closedir(dir_ptr);
 }
 
 void showFile(char* filename) {
@@ -92,11 +84,10 @@ void mode_to_letters(int mode, char * str)
         str[9] = 'x';
 }
 
-char* uid_to_name(uid_t uid)
+char* uid_to_name(uid_t uid)     //获取用户ID
 {
     struct  passwd *pw_ptr;
     static  char numstr[10];
-    //获取用户ID
     if ((pw_ptr = getpwuid(uid)) == NULL) {
         sprintf(numstr,"%d", uid);
         return numstr;
@@ -108,11 +99,10 @@ char* uid_to_name(uid_t uid)
 
 
 
-char* gid_to_name(gid_t gid)
+char* gid_to_name(gid_t gid)    //获取组ID
 {
     struct group *grp_ptr;
     static  char numstr[10];
-    //获取组ID
     if ((grp_ptr = getgrgid(gid)) == NULL) {
         sprintf(numstr,"%d", gid);
         return numstr;

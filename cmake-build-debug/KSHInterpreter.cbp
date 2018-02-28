@@ -87,7 +87,16 @@
 		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/cd.h">
 			<Option target="KSHInterpreter"/>
 		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/clear.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/cmp.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
 		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/date.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/find.h">
 			<Option target="KSHInterpreter"/>
 		</Unit>
 		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/ifconfig.h">
@@ -97,6 +106,18 @@
 			<Option target="KSHInterpreter"/>
 		</Unit>
 		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/main.c">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/mkdir.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/ps.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/pwd.h">
+			<Option target="KSHInterpreter"/>
+		</Unit>
+		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/sort.h">
 			<Option target="KSHInterpreter"/>
 		</Unit>
 		<Unit filename="/home/brunon/CLionProjects/KSHInterpreter/CMakeLists.txt">
