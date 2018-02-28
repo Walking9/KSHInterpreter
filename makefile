@@ -9,9 +9,9 @@ BINPATH = $(shell cd ./bin; pwd)
 # put link file into build/
 	
 bin/KSH-shell, bin/cat, bin/clear, bin/cmp, bin/cp, bin/date, bin/echo, bin/find, bin/ifconfig, bin/ls, \
-bin/mkdir, bin/more, bin/mv, bin/ps, bin/pwd, bin/replace, bin/rm, bin/sort, bin/tac, bin/tree, bin/who: src/cat.c src/clear.c src/cmp.c \
+bin/mkdir, bin/more, bin/mv, bin/ps, bin/pwd, bin/mesg, bin/rm, bin/sort, bin/tac, bin/tree, bin/who: src/cat.c src/clear.c src/cmp.c \
 src/cp.c src/date.c src/echo.c src/find.c src/ifconfig.c src/ls.c src/mkdir.c src/more.c src/mv.c src/ps.c \
-src/pwd.c src/replace.c src/rm.c src/sort.c src/tac.c src/tree.c src/who.c bashlib/KSH-shell.h bashlib/KSH-shell.c \
+src/pwd.c src/mesg.c src/rm.c src/sort.c src/tac.c src/tree.c src/who.c bashlib/KSH-shell.h bashlib/KSH-shell.c \
 bashlib/type_prompt.c bashlib/read_command.c bashlib/builtin_command.c bashlib/parsing.c
 	mkdir -p bin
 	$(CC) bashlib/KSH-shell.c bashlib/type_prompt.c bashlib/read_command.c \
@@ -30,7 +30,7 @@ bashlib/type_prompt.c bashlib/read_command.c bashlib/builtin_command.c bashlib/p
 	$(CC) src/mv.c -o bin/mv
 	$(CC) src/ps.c -o bin/ps
 	$(CC) src/pwd.c -o bin/pwd
-	$(CC) src/replace.c -o bin/replace
+	$(CC) src/replace.c -o bin/mesg
 	$(CC) src/rm.c -o bin/rm
 	$(CC) src/sort.c -o bin/sort
 	$(CC) src/tac.c -o bin/tac
