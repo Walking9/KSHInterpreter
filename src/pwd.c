@@ -14,6 +14,7 @@ void ksh_pwd(){
 }
 
 int main(int argc, char*argv[]){
+    printf("ksh-shell:\n");
 	ksh_pwd();
     return 0;
 }

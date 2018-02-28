@@ -13,6 +13,7 @@ void ksh_date() {
 
 int main(int argc, char **argv)
 {
+    printf("ksh-shell:\n");
 	ksh_date();
 	return 0;
 }

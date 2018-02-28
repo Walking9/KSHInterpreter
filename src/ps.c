@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <dirent.h>
 #include <sys/stat.h>
-#include <sys/types.h>
 #include <pwd.h>
 
 #define MAX_LEN 20
@@ -134,6 +133,7 @@ void print_ps(struct ps_info *head) {
 }
 
 int main(int argc, char*argv[]){
+    printf("ksh-shell:\n");
     ksh_ps();
     return 0;
 }

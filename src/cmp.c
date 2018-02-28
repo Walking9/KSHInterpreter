@@ -5,16 +5,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/line.h"
+#include "../lib/preprocess.h"
 
-void ksh_cmp(char* filename1, char* filename2); 
+void ksh_cmp(char* filename1, char* filename2);
 
-int main(int argc, char **argv)
-{
-	char lines[argc+1][255];
+int main(int argc, char **argv) {
+    char lines[argc+1][255];
     predealLine(argc, argv, lines);
-	ksh_cmp(lines[1], lines[2]);
-	return 0;
+    ksh_cmp(lines[1], lines[2]);
+    return 0;
 }
 
 void ksh_cmp(char* filename1, char* filename2){
@@ -22,6 +21,7 @@ void ksh_cmp(char* filename1, char* filename2){
     FILE* file2;
     char ch1, ch2;
     int lineNum = 1, columnNum = 1;
+    printf("ksh-shell:\n");
     if((file1=fopen(filename1, "r"))==NULL) {   //文件打开失败
         printf("%s isn't a file\n", filename1);
         return;
@@ -41,6 +41,7 @@ void ksh_cmp(char* filename1, char* filename2){
             columnNum++;
             if(ch1 == '\n') {
                 lineNum++;
+                columnNum = 1;
             }
         }
     }

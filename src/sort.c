@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <memory.h>
-#include "../include/line.h"
+#include "../lib/preprocess.h"
 
 #define MAX_CHARNUM 1024
 
@@ -49,6 +49,7 @@ void ksh_sort(char* filename){
 int main(int argc, char*argv[]){
     char lines[argc+1][255];
     predealLine(argc, argv, lines);
+    printf("ksh-shell:\n");
 	ksh_sort(lines[1]);
     return 0;
 }

@@ -3,13 +3,9 @@
 //
 
 #include <stdio.h>
-
 #include <ifaddrs.h>
-#include <stddef.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <stdio.h>
-#include <memory.h>
 
 int ksh_ifconfig() {
     char ip[16];
@@ -28,6 +24,7 @@ int ksh_ifconfig() {
 }
 
 int main(int argc, char*argv[]){
+    printf("ksh-shell:\n");
 	ksh_ifconfig();
     return 0;
 }

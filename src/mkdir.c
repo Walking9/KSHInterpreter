@@ -4,12 +4,9 @@
 
 #include <stdio.h>
 #include <sys/stat.h>
-#include <sys/types.h>
 #include <unistd.h>
-//#include <ctype.h>
 #include <string.h>
-#include <regex.h>
-#include "../include/line.h"
+#include "../lib/preprocess.h"
 
 void ksh_mkdir(char* name){
     if(access(name,R_OK)){
@@ -27,7 +24,8 @@ void ksh_mkdir(char* name){
 int main(int argc, char*argv[]){
     char lines[argc+1][255];
     predealLine(argc, argv, lines);
-	ksh_mkdir(lines[1]);
+    printf("ksh-shell:\n");
+    ksh_mkdir(lines[1]);
 
     return 0;
 }

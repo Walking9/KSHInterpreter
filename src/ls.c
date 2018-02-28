@@ -3,7 +3,6 @@
 //
 
 #include <dirent.h>
-#include <wchar.h>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <pwd.h>
@@ -110,6 +109,7 @@ char* gid_to_name(gid_t gid)    //获取组ID
 }
 
 int main(int argc, char**argv){
+    printf("ksh-shell:\n");
 	ksh_ls();
     return 0;
 }

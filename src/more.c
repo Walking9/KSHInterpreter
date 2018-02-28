@@ -10,6 +10,7 @@ void do_more(FILE *);
 int see_more(FILE *);
 int main(int ac, char *av[]) {
     FILE *fp;
+    printf("ksh-shell:\n");
     if (ac == 1)
         do_more(stdin);
     else {

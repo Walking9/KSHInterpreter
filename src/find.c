@@ -6,7 +6,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <memory.h>
-#include "../include/line.h"
+#include "../lib/preprocess.h"
 
 void ksh_find(char* find) {
     DIR* dir_ptr = opendir(".");    //当前目录下
@@ -25,6 +25,7 @@ void ksh_find(char* find) {
 int main(int argc, char*argv[]){
     char lines[argc+1][255];
     predealLine(argc, argv, lines);
+    printf("ksh-shell:\n");
 	ksh_find(lines[1]);
 
     return 0;
