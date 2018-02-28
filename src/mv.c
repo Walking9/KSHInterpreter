@@ -1,30 +1,48 @@
-#include <stdio.h>
-#include <sys/stat.h>
-#include <string.h>
-#include <unistd.h>
-#include "../lib/preprocess.h"
+//
+// Created by brunon on 18-2-27.
+//
 
-int main(int argc, char** argv){
-    char lines[argc+1][255];
-    predealLine(argc, argv, lines);
-    printf("ksh-shell:\n");
-    if(strcmp("mv",lines[0])==0){
-        struct stat dir_stat;
-        if((access(lines[1],F_OK)!=0)){
-            perror("Don't exist DIR1\n");
-            return 0;
-        }
-        else if(stat(lines[1], &dir_stat)<0){
-            perror("Stat error!\n");
-            return 0;
-        }
-        else if(rename(lines[1],lines[2])<0){
-            perror("Rename error!\n");
-        }
-    }
-    else{
-        perror("error after lines\n");
-    }
+#include<stdio.h>  
+#include<unistd.h>  
+#include<sys/stat.h>  
+#include<string.h>  
+#include<stdlib.h>  
+char * getFileName(char * fileName){  
+    char tp[100],*nm=(char*)malloc(sizeof(char));  
+    int i,j=0;  
+    for(i=strlen(fileName)-1;i>=0;i--){  
+        if(fileName[i]=='/')break;  
+    }  
+    for(i++;i<strlen(fileName);i++){  
+        tp[j++]=fileName[i];  
+    }  
+    tp[j]='\0';  
+    strcpy(nm,tp);  
+    return nm;  
+}  
+int main(int argc,char** argv){  
+    struct stat st;  
+    if(argc!=3){  
+        fprintf(stderr,"usage: %s source destination not found\n",*argv);  
+    }  
+      
+    if(stat(argv[1],&st)==-1 || S_ISDIR(st.st_mode)){  
+        printf("source is not a file");  
+        exit(1);  
+    }  
+    if(stat(argv[2],&st)!=-1){	//判断是不是目录   
+        if(S_ISDIR(st.st_mode)){  
+            strcpy(argv[2] + strlen(argv[2]),"/");  
+            strcpy(argv[2] + strlen(argv[2]),getFileName(argv[1]));  
+            strcpy(argv[2] + strlen(argv[2]),"\0");  
+        }else{  
+            printf("destination file is already exist\n");  
+            //exit(1);  
+        }  
+    }  
 
-    return 0;
-}
+    if(rename(argv[1],argv[2])==-1){   //复制包含目录的文件
+        printf("error!\n");  
+    }  
+    return 1;  
+}  
