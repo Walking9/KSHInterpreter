@@ -1,2 +1,0 @@
-Options: 
-CMake: 3.8.2@/home/brunon/桌面/CLion/clion-2017.2.3/bin/cmake/bin/cmake

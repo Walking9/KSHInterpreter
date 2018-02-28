@@ -1,4 +1,0 @@
-/home/brunon/桌面/CLion/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/brunon/CLionProjects/KSHInterpreter
--- Configuring done
--- Generating done
--- Build files have been written to: /home/brunon/CLionProjects/KSHInterpreter/cmake-build-debug

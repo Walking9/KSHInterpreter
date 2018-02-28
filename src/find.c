@@ -2,13 +2,11 @@
 // Created by brunon on 18-2-27.
 //
 
-#ifndef KSHINTERPRETER_FIND_H
-#define KSHINTERPRETER_FIND_H
-
 #include <dirent.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <memory.h>
+#include "../include/line.h"
 
 void ksh_find(char* find) {
     DIR* dir_ptr = opendir(".");    //当前目录下
@@ -23,4 +21,11 @@ void ksh_find(char* find) {
     printf("\n");
     closedir(dir_ptr);
 }
-#endif //KSHINTERPRETER_FIND_H
+
+int main(int argc, char*argv[]){
+    char lines[argc+1][255];
+    predealLine(argc, argv, lines);
+	ksh_find(lines[1]);
+
+    return 0;
+}

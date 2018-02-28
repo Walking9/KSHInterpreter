@@ -2,8 +2,7 @@
 // Created by brunon on 18-2-27.
 //
 
-#ifndef KSHINTERPRETER_IFCONFIG_H
-#define KSHINTERPRETER_IFCONFIG_H
+#include <stdio.h>
 
 #include <ifaddrs.h>
 #include <stddef.h>
@@ -28,4 +27,7 @@ int ksh_ifconfig() {
     return 0;
 }
 
-#endif //KSHINTERPRETER_IFCONFIG_H
+int main(int argc, char*argv[]){
+	ksh_ifconfig();
+    return 0;
+}

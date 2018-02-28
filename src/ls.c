@@ -1,9 +1,6 @@
 //
-// Created by brunon on 18-2-26.
+// Created by brunon on 18-2-27.
 //
-
-#ifndef KSHINTERPRETER_LS_H
-#define KSHINTERPRETER_LS_H
 
 #include <dirent.h>
 #include <wchar.h>
@@ -112,4 +109,7 @@ char* gid_to_name(gid_t gid)    //获取组ID
     }
 }
 
-#endif //KSHINTERPRETER_LS_H
+int main(int argc, char**argv){
+	ksh_ls();
+    return 0;
+}

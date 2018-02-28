@@ -1,19 +1,17 @@
 //
 // Created by brunon on 18-2-27.
 //
-
-#ifndef KSHINTERPRETER_PS_H
-#define KSHINTERPRETER_PS_H
-
 #include <stdio.h>
 #include <unistd.h>
-//#include <sys/stat.h>
 #include <string.h>
 #include <stdlib.h>
-//#include <sys/types.h>
 #include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <pwd.h>
 
 #define MAX_LEN 20
+#define MAX_SIZE_PATH 255
 
 void ksh_ps();
 struct ps_info *trav_dir(char dir[]);
@@ -135,4 +133,7 @@ void print_ps(struct ps_info *head) {
     }
 }
 
-#endif //KSHINTERPRETER_PS_H
+int main(int argc, char*argv[]){
+    ksh_ps();
+    return 0;
+}

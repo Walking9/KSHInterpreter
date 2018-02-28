@@ -1,9 +1,6 @@
 //
-// Created by brunon on 18-2-28.
+// Created by brunon on 18-2-27.
 //
-
-#ifndef KSHINTERPRETER_PWD_H
-#define KSHINTERPRETER_PWD_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -16,4 +13,7 @@ void ksh_pwd(){
     printf("%s\n", path);
 }
 
-#endif //KSHINTERPRETER_PWD_H
+int main(int argc, char*argv[]){
+	ksh_pwd();
+    return 0;
+}

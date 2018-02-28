@@ -2,11 +2,9 @@
 // Created by brunon on 18-2-27.
 //
 
-#ifndef KSHINTERPRETER_SORT_H
-#define KSHINTERPRETER_SORT_H
-
 #include <stdio.h>
 #include <memory.h>
+#include "../include/line.h"
 
 #define MAX_CHARNUM 1024
 
@@ -48,4 +46,9 @@ void ksh_sort(char* filename){
     }
 }
 
-#endif //KSHINTERPRETER_SORT_H
+int main(int argc, char*argv[]){
+    char lines[argc+1][255];
+    predealLine(argc, argv, lines);
+	ksh_sort(lines[1]);
+    return 0;
+}
