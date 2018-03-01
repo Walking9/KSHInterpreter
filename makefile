@@ -1,5 +1,5 @@
 $(CC)      :=gcc
-VPATH = src:bashlib:include
+VPATH = src:bashlib:lib
 BINPATH = $(shell cd ./bin; pwd)
 # makefile created by fuhs
 
@@ -30,7 +30,7 @@ bashlib/type_prompt.c bashlib/read_command.c bashlib/builtin_command.c bashlib/p
 	$(CC) src/mv.c -o bin/mv
 	$(CC) src/ps.c -o bin/ps
 	$(CC) src/pwd.c -o bin/pwd
-	$(CC) src/replace.c -o bin/mesg
+	$(CC) src/mesg.c -o bin/mesg
 	$(CC) src/rm.c -o bin/rm
 	$(CC) src/sort.c -o bin/sort
 	$(CC) src/tac.c -o bin/tac

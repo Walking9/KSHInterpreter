@@ -20,7 +20,7 @@ int main(int argc , char *argv[]){
     fp=(struct stat *)malloc(sizeof(struct stat));
 
     if(argc != 2){
-        fprintf(stderr,"input error %s \n");
+        fprintf(stderr,"input error %s \n", strerror(errno));
         exit(1);
     }
 
